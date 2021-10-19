@@ -6,6 +6,11 @@
 
 //Code here
 
+let me = {
+  name: 'Jacob',
+  age: 24
+};
+
 
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
@@ -17,13 +22,19 @@
 
 //Code here
 
-
+let dog = {
+  name: 'Auto',
+  color: 'Grey',
+  age: 7,
+  goodBoy: true
+};
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
 //Code here
 
+console.log(dog.name);
 
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
@@ -31,6 +42,7 @@
 
 //Code here
 
+console.log(dog['color']);
 
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
@@ -41,6 +53,14 @@
 
 //Code here
 
+let favoriteThings = {
+  band: 'styx',
+  food: 'indian',
+  person: 'Michael Scott',
+  book: 'man who tapped the secrets of the universe',
+  movie: 'hot rod',
+  holiday: 'none'
+};
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
@@ -48,6 +68,8 @@
 
 //Code here
 
+favoriteThings.car = 'R33 Gtr';
+favoriteThings.show = 'New Girl';
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
@@ -55,6 +77,9 @@
 */
 
 //Code here
+
+favoriteThings.food = 'Chicken Nuggets';
+favoriteThings.book = 'Harry Potter';
 
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
@@ -74,7 +99,8 @@ var carDetails = {
 
 //Code Here
 
-
+let {color, make, model, year} = carDetails;
+console.log(color, make, model, year);
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
@@ -86,11 +112,18 @@ var carDetails = {
 
 function greeting( obj ) {
   //Code Here
-  
+  let {firstName, lastName, title} = obj;
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
+};
+
+let person = {
+  firstName: 'Bob',
+  lastName: 'Timmy',
+  title: 'lorde'
 }
+console.log(greeting(person))
 
 
 
