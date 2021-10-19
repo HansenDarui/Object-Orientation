@@ -139,7 +139,19 @@ console.log(greeting(person))
 
 //Code Here
 
+function totalPopulation(obj) {
+  let {utah, california, texas, arizona} = obj;
+  return utah + california + texas + arizona;
 
+} 
+
+let population = {
+  utah: 400,
+  california: 450,
+  texas: 425,
+  arizona: 234
+};
+console.log(totalPopulation(population));
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -153,7 +165,22 @@ console.log(greeting(person))
 
 //Code Here
 
+function ingredients(obj) {
+  let {carb, fat, protein} = obj;
+  let nutritionArr = [];
+  for (let key in obj) {
+    nutritionArr.push(obj[key])
+  };
+  return nutritionArr;
+};
 
+let fries = {
+  carb: 40,
+  fat: 33,
+  protien: 3
+};
+
+console.log(ingredients(fries))
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
@@ -175,6 +202,9 @@ var user = {
 
 //Code Here
 
+user.name = 'Bryan G. Smith';
+user.email = 'bryan.smith@devmounta.in';
+console.log(user);
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
@@ -183,6 +213,8 @@ var user = {
 
 //Code Here
 
+delete user.age;
+console.log(user);
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -193,7 +225,16 @@ var user = {
 
 //Code here
 
+class Cat {
+  constructor(name, age, color) {
+    this.name = name;
+    this.age = age;
+    this.color = color;
+  }
+}
 
+let ruffles = new Cat('ruffles', 45, 'silver');
+console.log(ruffles.name);
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
@@ -204,6 +245,21 @@ var user = {
 */
 
 //Code here
+
+class Wizard {
+  constructor(name, age, favoriteSpell) {
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell;
+  }
+  castSpell() {
+      console.log(`${this.name} has cast ${this.favoriteSpell}`);
+  }
+};
+
+let wizard1 = new Wizard('lillil', 1000, 'blizzard');
+
+wizard1.castSpell();
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -230,6 +286,23 @@ var user = {
 
 //Code Here
 
+class Phone {
+  constructor(brand, model, storage, color, price) {
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = false;
+  };
+  sell() {
+    this.sold = true;
+    console.log(`${this.brand} ${this.model} has been sold`)
+  };
+  changePrice(newPrice) {
+    this.price = newPrice;
+  }
+}
   
 /*
     Next make three new phone instances using your class.
@@ -242,6 +315,10 @@ var user = {
 */
 
 //Code Here
+let phone1 = new Phone('Motorolla', 'Razer', 1, 'Silver', 85);
+let phone2 = new Phone('Apple', 'Iphone', 128, 'Space Grey', 1000);
+let phone3 = new Phone('T-Mobile', 'Sidekick', 11, 'silver', 300);
+
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -252,6 +329,8 @@ var user = {
 
 //Code Here 
 
+phone1.changePrice(400);
+console.log(phone1);
 
 /*
   Now call the sell method on one of your other phone objects
@@ -261,6 +340,8 @@ var user = {
 
 //Code Here 
 
+phone2.sell();
+console.log(phone2['sold']);
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
@@ -280,6 +361,8 @@ const colors = {
 
 //Code Here 
 
+let colorsCopy = {...colors};
+console.log(colorsCopy);
 
 
 /*
@@ -308,6 +391,12 @@ const shippingInfo = {
 
 //Code Here
 
+let newInfo = {
+  ...contactInfo,
+  ...shippingInfo
+};
+
+console.log(newInfo);
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
@@ -326,13 +415,27 @@ const shippingInfo = {
 
 //Code Here 
 
+class Vehicle {
+  constructor(capacity, color, mileage) {
+    this.capacity = capacity;
+    this.color = color;
+    this.mileage = mileage;
+  };
+  move() {
+    this.mileage += miles;
+    console.log(this.mileage);
+  }
+}
+
+
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
 //Code Here
-
+let myFirstVehicle = new Vehicle(2, 'purple', 400000);
+console.log(myFirstVehicle);
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
@@ -344,6 +447,15 @@ const shippingInfo = {
 */
 
 //Code Here
+class Motorcycle {
+  constructor(capacity, color, mileage, make, isCool) {
+    this.capacity = capacity;
+    this.color = color;
+    this.mileage = mileage;
+    this.make = make;
+    this.isCool = isCool;
+  }
+}
 
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
